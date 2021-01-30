@@ -73,25 +73,25 @@ impl Payloader for VP8Payloader {
 #[derive(Debug, Default)]
 pub struct VP8Packet {
     // Required Header
-    x: u8,   /* extended controlbits present */
-    n: u8,   /* (non-reference frame)  when set to 1 this frame can be discarded */
-    s: u8,   /* start of VP8 partition */
-    pid: u8, /* partition index */
+    pub x: u8,   /* extended controlbits present */
+    pub n: u8,   /* (non-reference frame)  when set to 1 this frame can be discarded */
+    pub s: u8,   /* start of VP8 partition */
+    pub pid: u8, /* partition index */
 
     // Optional Header
-    i: u8, /* 1 if PictureID is present */
-    l: u8, /* 1 if TL0PICIDX is present */
-    t: u8, /* 1 if TID is present */
-    k: u8, /* 1 if KEYIDX is present */
+    pub i: u8, /* 1 if PictureID is present */
+    pub l: u8, /* 1 if TL0PICIDX is present */
+    pub t: u8, /* 1 if TID is present */
+    pub k: u8, /* 1 if KEYIDX is present */
 
-    picture_id: u16, /* 8 or 16 bits, picture ID */
-    tl0_pic_idx: u8, /* 8 bits temporal level zero index */
+    pub picture_id: u16, /* 8 or 16 bits, picture ID */
+    pub tl0_pic_idx: u8, /* 8 bits temporal level zero index */
 
-    tid: u8,
-    y: u8,
-    key_idx: u8,
+    pub tid: u8,
+    pub y: u8,
+    pub key_idx: u8,
 
-    payload: Vec<u8>,
+    pub payload: Vec<u8>,
 }
 
 impl Depacketizer for VP8Packet {
