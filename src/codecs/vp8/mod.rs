@@ -71,7 +71,7 @@ impl Payloader for VP8Payloader {
 }
 
 #[derive(Debug, Default)]
-struct VP8Packet {
+pub struct VP8Packet {
     // Required Header
     x: u8,   /* extended controlbits present */
     n: u8,   /* (non-reference frame)  when set to 1 this frame can be discarded */
